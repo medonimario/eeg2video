@@ -3,6 +3,15 @@
 
 # Relevant commands
 
+* Run the read-only Stage 0 audit from the repository root in the `eeg2video` conda environment using
+  `PYTHONPATH=src python -m eeg2video.audit --output reports/stage0`. Choose a new output directory for a rerun.
+  The audit reads `VIDEO_DATA_DIR` and `STIMULUS_DIR` from the environment or the repository-local `.env`.
+  Only use trusted study exports because the MNE copies and NPZ channel metadata use pickle.
+
+* Stage 1 uses `python -m eeg2video.prepare`, `python -m eeg2video.partition --seed 42`,
+  `python -m eeg2video.vision --film 3 --device cuda` and `python -m eeg2video.verify`.
+  Run a second partition with seed 43 for the leakage check. Use `--base-only` to verify before GPU extraction.
+  See README.md for the conda setup, pinned model downloads with `hf download`, and LSF job submissions.
 * The project uses `pip` for management of packages. This means:
   * To install packages, use `pip install <package-name>`.
   * To run Python scripts, use `python <script-name>.py`.

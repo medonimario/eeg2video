@@ -1,4 +1,12 @@
+av==18.1.1
+huggingface-hub==0.36.2
+matplotlib==3.11.2
+mne==1.11.0
+numpy==2.4.6
+opencv-python-headless==4.13.0.92
+pillow==13.0.0
+python-dotenv==1.2.4
+safetensors==0.8.0
+scipy==1.17.1
 torch==2.6.0
-typer==0.15.2
-fastapi==0.115.12
-uvicorn==0.34.2
+transformers==4.57.6
